@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Square from "./Square";
 import Endgame from "./Endgame";
-import Footer from "./Footer";
 
 const INITIAL = "";
 const X_PLAYER = "X";
@@ -39,7 +38,7 @@ export default function Game() {
       }
 
       // O wins
-      for (let i = 0; i < 8; i++) {
+      for (let i = 0; i < 9; i++) {
         if (
           grid[winCombination[i][0]] === O_PLAYER &&
           grid[winCombination[i][1]] === O_PLAYER &&
@@ -107,7 +106,6 @@ export default function Game() {
         />
       )}
       <Square clickedArray={grid} handleClick={handleClick} />
-      <Footer />
     </div>
   );
 }
