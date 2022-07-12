@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Square from "./Square";
 import Endgame from "./Endgame";
+import Footer from "./Footer";
 
 const INITIAL = "";
 const X_PLAYER = "X";
@@ -33,7 +34,7 @@ export default function Game() {
           grid[winCombination[i][2]] === X_PLAYER
         ) {
           setWin(true);
-          setWinCount({...winCount, X: winCount.X + 1});
+          setWinCount({ ...winCount, X: winCount.X + 1 });
         }
       }
 
@@ -45,7 +46,7 @@ export default function Game() {
           grid[winCombination[i][2]] === O_PLAYER
         ) {
           setWin(true);
-          setWinCount({...winCount, O: winCount.O + 1});
+          setWinCount({ ...winCount, O: winCount.O + 1 });
         }
       }
 
@@ -58,13 +59,13 @@ export default function Game() {
     }
   };
 
-const restartGame = () => {
+  const restartGame = () => {
     setGrid(Array(9).fill(INITIAL));
     setWin(false);
     setDraw(false);
-}
+  };
 
-function clearHistory() {
+  function clearHistory() {
     setWinCount({ X: 0, O: 0 });
     restartGame();
   }
@@ -91,8 +92,22 @@ function clearHistory() {
   return (
     <div>
       <h1>Play Tic Tac Toe!</h1>
-      {win && (<Endgame clearHistory={clearHistory} winCount={winCount}  restartGame={restartGame} player={player} draw={draw} />)}
+      <span className="win-history">
+        X POINTS: {winCount.X}
+        <br />
+        O POINTS: {winCount.O}
+      </span>
+      {win && (
+        <Endgame
+          clearHistory={clearHistory}
+          winCount={winCount}
+          restartGame={restartGame}
+          player={player}
+          draw={draw}
+        />
+      )}
       <Square clickedArray={grid} handleClick={handleClick} />
+      <Footer />
     </div>
   );
 }

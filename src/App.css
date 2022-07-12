@@ -24,6 +24,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 h1,
@@ -63,6 +64,7 @@ h1 {
   justify-content: center;
   grid-gap: 5px;
   cursor: pointer;
+  margin-top: 3rem;
 }
 
 .square.clicked {
@@ -110,4 +112,10 @@ h1 {
   color: var(--light-color);
   font-size: 2rem;
   margin: 2rem 0;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  margin: 1rem auto;
 }
