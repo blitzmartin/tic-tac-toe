@@ -105,3 +105,9 @@ h1 {
   color: var(--light-color);
   font-size: 4rem;
 }
+
+.win-history {
+  color: var(--light-color);
+  font-size: 2rem;
+  margin: 2rem 0;
+}

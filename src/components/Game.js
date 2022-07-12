@@ -21,6 +21,7 @@ export default function Game() {
   const [player, setPlayer] = useState(false);
   const [win, setWin] = useState(false);
   const [draw, setDraw] = useState(false);
+  const [winCount, setWinCount] = useState({ X: 0, O: 0 });
 
   const isGameOver = () => {
     if (!win) {
@@ -32,7 +33,7 @@ export default function Game() {
           grid[winCombination[i][2]] === X_PLAYER
         ) {
           setWin(true);
-          console.log(X_PLAYER);
+          setWinCount({...winCount, X: winCount.X + 1});
         }
       }
 
@@ -44,7 +45,7 @@ export default function Game() {
           grid[winCombination[i][2]] === O_PLAYER
         ) {
           setWin(true);
-          console.log(O_PLAYER);
+          setWinCount({...winCount, O: winCount.O + 1});
         }
       }
 
@@ -53,7 +54,6 @@ export default function Game() {
         //checks if squares are not all empty
         setDraw(true);
         setWin(true);
-        console.log("DRAW");
       }
     }
   };
@@ -63,6 +63,11 @@ const restartGame = () => {
     setWin(false);
     setDraw(false);
 }
+
+function clearHistory() {
+    setWinCount({ X: 0, O: 0 });
+    restartGame();
+  }
 
   isGameOver();
 
@@ -86,7 +91,7 @@ const restartGame = () => {
   return (
     <div>
       <h1>Play Tic Tac Toe!</h1>
-      {win && (<Endgame restartGame={restartGame} player={player} draw={draw} />)}
+      {win && (<Endgame clearHistory={clearHistory} winCount={winCount}  restartGame={restartGame} player={player} draw={draw} />)}
       <Square clickedArray={grid} handleClick={handleClick} />
     </div>
   );
