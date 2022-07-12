@@ -4,7 +4,7 @@
   --primary-font: 'PT Sans', sans-serif;
   --accent-font: 'Inika', serif;
   --light-color: #fff;
-  --dark-color: #202020;
+  --dark-color: #151d38;
   --primary-color: #6686df;
   --accent-color: #e23dcc;
 }
@@ -45,8 +45,14 @@ h1 {
   width: 5rem;
   background-color: var(--light-color);
   display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--accent-color);
   font-size: 4rem;
+}
+
+.square:hover {
+  background-color: #e0e4ee;
 }
 
 .board {
@@ -56,4 +62,10 @@ h1 {
   justify-content: center;
   grid-gap: 5px;
   cursor: pointer;
+}
+
+.square.clicked {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  cursor: not-allowed;
 }
