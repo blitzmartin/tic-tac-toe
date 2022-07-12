@@ -16,11 +16,13 @@
 }
 
 .App {
-  text-align: center;
   font-family: var(--primary-font);
   background-color: var(--primary-color);
   color: var(--dark-color);
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -36,4 +38,22 @@ h6 {
 
 h1 {
   font-size: 3rem;
+}
+
+.square {
+  height: 5rem;
+  width: 5rem;
+  background-color: var(--light-color);
+  display: flex;
+  color: var(--accent-color);
+  font-size: 4rem;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-items: center;
+  justify-content: center;
+  grid-gap: 5px;
+  cursor: pointer;
 }
