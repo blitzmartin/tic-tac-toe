@@ -17,6 +17,7 @@
 
 .App {
   font-family: var(--primary-font);
+  font-weight: bold;
   background-color: var(--primary-color);
   color: var(--dark-color);
   height: 100vh;
@@ -33,7 +34,7 @@ h5,
 h6 {
   font-family: var(--accent-font);
   color: var(--light-color);
-  padding: 1rem 0;
+  margin: 2rem 0;
 }
 
 h1 {
