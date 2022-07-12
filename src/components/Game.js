@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Square from "./Square";
+import Endgame from "./Endgame";
 
 const INITIAL = "";
 const X_PLAYER = "X";
@@ -57,6 +58,12 @@ export default function Game() {
     }
   };
 
+const restartGame = () => {
+    setGrid(Array(9).fill(INITIAL));
+    setWin(false);
+    setDraw(false);
+}
+
   isGameOver();
 
   const handleClick = (id) => {
@@ -79,6 +86,7 @@ export default function Game() {
   return (
     <div>
       <h1>Play Tic Tac Toe!</h1>
+      {win && (<Endgame restartGame={restartGame} player={player} draw={draw} />)}
       <Square clickedArray={grid} handleClick={handleClick} />
     </div>
   );
