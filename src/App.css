@@ -1,3 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=PT+Sans:wght@400;700&display=swap');
+
+:root {
+  --primary-font: 'PT Sans', sans-serif;
+  --accent-font: 'Inika', serif;
+  --light-color: #fff;
+  --dark-color: #202020;
+  --primary-color: #6686df;
+  --accent-color: #e23dcc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
+  font-family: var(--primary-font);
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+  height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--accent-font);
+  color: var(--light-color);
+  padding: 1rem 0;
+}
+
+h1 {
+  font-size: 3rem;
 }
