@@ -38,7 +38,7 @@ export default function Game() {
       }
 
       // O wins
-      for (let i = 0; i < 9; i++) {
+      for (let i = 0; i < 8; i++) {
         if (
           grid[winCombination[i][0]] === O_PLAYER &&
           grid[winCombination[i][1]] === O_PLAYER &&
